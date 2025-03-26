@@ -20,4 +20,4 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Greeting
-        run: echo "Brawo! Znakomita robota!" >> $GITHUB_STEP_SUMMARY
+        run: echo "Good work" >> $GITHUB_STEP_SUMMARY

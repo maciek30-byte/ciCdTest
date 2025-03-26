@@ -29,6 +29,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
         <p>That is CD POC</p>
+        <p>Just change, should not be deployed automatically</p>
     </>
   )
 }
