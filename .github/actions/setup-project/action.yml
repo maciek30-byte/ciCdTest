@@ -24,5 +24,6 @@ runs:
 
     - name: Install dependencies
       run: pnpm install --frozen-lockfile
+      shell: bash
       env:
         PNPM_HOME: ~/.pnpm-store
