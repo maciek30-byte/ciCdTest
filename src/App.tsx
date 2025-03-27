@@ -31,6 +31,7 @@ function App() {
         <p>Another change, now it should not be deployed :D :D </p>
         <p>That is CD POC</p>
         <p>Just change, should not be deployed automatically</p>
+        <p>Change that SHOULD BE NOW ON ON NELIFY!!!!!!</p>
     </>
   )
 }
