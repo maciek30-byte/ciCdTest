@@ -16,8 +16,7 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+
 
       - name: Greeting
         run: echo "Good work" >> $GITHUB_STEP_SUMMARY

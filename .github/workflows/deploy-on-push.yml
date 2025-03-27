@@ -1,0 +1,11 @@
+name: Deploy on push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-netlify:
+    uses: ./.github/workflows/deploy-netlify.yml
+    secrets: inherit
