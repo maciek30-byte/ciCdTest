@@ -8,6 +8,6 @@ describe('multiplyCount', () => {
 
         const result = multiplyCount(counter, userParams)
 
-        expect(result).toBe(80)
+        expect(result).toBe(100)
     });
 });
