@@ -17,13 +17,15 @@ runs:
     - name: Setup pnpm cache
       uses: actions/cache@v3
       with:
-        path: ~/.pnpm-store
+        path: |
+          ~/.pnpm-store
+          node_modules  # Cache'uj zarówno store, jak i node_modules
         key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
         restore-keys: |
           ${{ runner.os }}-pnpm-
 
     - name: Install dependencies
-      run: pnpm install --frozen-lockfile
+      run: pnpm install --frozen-lockfile --prefer-offline
       shell: bash
       env:
         PNPM_HOME: ~/.pnpm-store
