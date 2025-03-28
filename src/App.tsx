@@ -6,6 +6,7 @@ import {multiplyCount} from "./utils/multiplyCount/multiplyCout.ts";
 
 function App() {
   const [count, setCount] = useState(0)
+    const [multiplier] = useState(50)
 
   return (
     <>
@@ -19,12 +20,11 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => multiplyCount(count,50))}>
+        <button onClick={() => setCount((count) => multiplyCount(count,multiplier))}>
           count is {count}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
-            <p>Udalo sie zdeployowac</p>
         </p>
       </div>
       <p className="read-the-docs">
