@@ -5,7 +5,7 @@ on:
     inputs:
       test-input:
         type: boolean
-        description: Should run test input workflow?
+        description: Are you sure about deploying it?
         default: true
 
 jobs:
@@ -24,8 +24,8 @@ jobs:
 #      - name: Lint code
 #        run: npm run lint
 
-#      - name: Run unit tests
-#        run: npm run test
+      - name: Run unit tests
+        run: pnpm run test
 
       - name: Build app
         run: pnpm run build

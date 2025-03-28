@@ -1,0 +1,1 @@
+export const multiplyCount = (counter: number, multiplier: number)=> counter * multiplier

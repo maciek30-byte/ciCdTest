@@ -17,5 +17,8 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
+      - name: Run unit tests
+        run: npm run test
+
       - name: Greeting
         run: echo "Good work Automatic Job are finished" >> $GITHUB_STEP_SUMMARY
