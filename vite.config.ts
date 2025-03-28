@@ -3,12 +3,19 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  base: './',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
+    sourcemap: true
+  },
   test: {
-    globals: true,          // umożliwia używanie describe/it/expect bez importu
-    environment: 'jsdom',   // środowisko testowe (przeglądarkowe)
-    setupFiles: './src/test/setup.ts',  // plik z konfiguracją (opcjonalnie)
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.ts',
     coverage: {
-      provider: 'v8',       // engine pokrycia kodu
+      provider: 'v8',
       reporter: ['text', 'json', 'html'],
     },
   },
