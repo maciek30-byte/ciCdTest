@@ -3,7 +3,7 @@ name: Manual Deploy - Netlify
 on:
   workflow_dispatch:
     inputs:
-      enable_netlify:
+      enable-netlify:  # Zmieniłem nazwę na zgodną z warunkiem if
         type: boolean
         description: Are you sure about deploying it?
         default: true
@@ -15,6 +15,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Debug input value  # Dodany krok debugowania
+        run: |
+          echo "Input value: ${{ inputs.enable-netlify }}"
+          echo "GITHUB_CONTEXT: ${{ toJson(github) }}"
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -28,7 +33,7 @@ jobs:
         run: pnpm run build
 
       - name: Deploy to Netlify
-        if: ${{ inputs.enable-netlify == true }}
+        if: ${{ inputs.enable-netlify == true }}  # Teraz nazwa się zgadza
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: './dist'
