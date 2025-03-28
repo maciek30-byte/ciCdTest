@@ -1,7 +1,12 @@
-name: Deploy - Netlify
+name: Manual Deploy - Netlify
 
 on:
-  workflow_call:
+  workflow_dispatch:
+    inputs:
+      test-input:
+        type: boolean
+        description: Should run test input workflow?
+        default: true
 
 jobs:
   deploy-netlify:
@@ -26,6 +31,7 @@ jobs:
         run: pnpm run build
 
       - name: Deploy to Netlify
+        if: ${{ inputs.enable-netlify == true }}
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: './dist'

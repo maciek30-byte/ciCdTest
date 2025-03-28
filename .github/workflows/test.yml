@@ -1,5 +1,11 @@
-name: Hello world!
-on: workflow_dispatch
+name: Manual trigger!
+on:
+  workflow_dispatch:
+    inputs:
+      test-input:
+        type: boolean
+        description: Should run test input workflow?
+        default: true
 
 jobs:
   app-setup:
@@ -19,4 +25,4 @@ jobs:
 
 
       - name: Greeting
-        run: echo "Good work" >> $GITHUB_STEP_SUMMARY
+        run: echo "Good work Automatic Job are finished" >> $GITHUB_STEP_SUMMARY

@@ -6,6 +6,6 @@ on:
       - main
 
 jobs:
-  deploy-netlify:
-    uses: ./.github/workflows/deploy-netlify.yml
+   test-job:
+    uses: ./.github/workflows/test.yml
     secrets: inherit
