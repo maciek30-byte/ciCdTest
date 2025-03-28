@@ -21,7 +21,6 @@ function App() {
       <div className="card">
         <button onClick={() => setCount((count) => multiplyCount(count,50))}>
           count is {count}
-            multiplyCounterIS {count}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
