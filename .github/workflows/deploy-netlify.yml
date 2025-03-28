@@ -3,7 +3,7 @@ name: Manual Deploy - Netlify
 on:
   workflow_dispatch:
     inputs:
-      test-input:
+      enable_netlify:
         type: boolean
         description: Are you sure about deploying it?
         default: true
@@ -20,9 +20,6 @@ jobs:
 
       - name: Configure node
         uses: ./.github/actions/setup-project
-
-#      - name: Lint code
-#        run: npm run lint
 
       - name: Run unit tests
         run: pnpm run test
