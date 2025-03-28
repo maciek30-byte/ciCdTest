@@ -9,16 +9,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Configure Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-
-      - name: Install pnpm
-        run: npm install -g pnpm
+      - name: Configure node
+        uses: ./.github/actions/setup-project
 
       - name: Run unit tests
-        run: npm run test
+        run: pnpm run test
 
       - name: Greeting
         run: echo "Good work Automatic Job are finished" >> $GITHUB_STEP_SUMMARY
