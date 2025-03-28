@@ -1,11 +1,6 @@
 name: Manual trigger!
 on:
-  workflow_dispatch:
-    inputs:
-      test-input:
-        type: boolean
-        description: Should run test input workflow?
-        default: true
+  workflow_call:
 
 jobs:
   app-setup:
@@ -21,8 +16,6 @@ jobs:
 
       - name: Install pnpm
         run: npm install -g pnpm
-
-
 
       - name: Greeting
         run: echo "Good work Automatic Job are finished" >> $GITHUB_STEP_SUMMARY
