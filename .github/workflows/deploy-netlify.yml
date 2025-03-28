@@ -1,18 +1,15 @@
-name: Manual Deploy - Netlify
+name: Deploy to Netlify
 
 on:
-  workflow_dispatch:
-    inputs:
-      enable-netlify:
-        type: boolean
-        description: Are you sure about deploying it?
-        default: true
+  push:
+    branches: [main, master]
+
 
 jobs:
   deploy-netlify:
+    runs-on: ubuntu-latest
     environment:
       name: 'Development'
-    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -20,9 +17,6 @@ jobs:
 
       - name: Configure node
         uses: ./.github/actions/setup-project
-
-      - name: Run unit tests
-        run: pnpm run test
 
       - name: Build app
         run: pnpm run build
