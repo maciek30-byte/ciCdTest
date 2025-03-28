@@ -28,7 +28,7 @@ jobs:
         run: pnpm run build
 
       - name: Deploy to Netlify
-        if: ${{ inputs.enable-netlify == true }}  # Teraz nazwa się zgadza
+        if: ${{ inputs.enable-netlify == true }}
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: './dist'
