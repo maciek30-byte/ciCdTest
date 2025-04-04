@@ -1,0 +1,13 @@
+name: quality-check
+description: check lint and unit tests
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Lint code
+      run: pnpm run lint
+      shell: bash
+
+    - name: Run unit tests
+      run: pnpm run tests
+      shell: bash
