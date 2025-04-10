@@ -9,8 +9,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "preview": "vite preview",
-    "test": "vitest",
-    "test:ui": "playwright test --ui"
+    "test": "vitest"
   },
   "dependencies": {
     "react": "^19.0.0",

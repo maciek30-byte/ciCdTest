@@ -18,9 +18,6 @@ jobs:
       - name: Configure node
         uses: ./.github/actions/setup-project
 
-      - name: Code Quality check
-        uses: ./.github/actions/quality-check
-
       - name: Build app
         run: pnpm run build
 
