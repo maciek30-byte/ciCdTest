@@ -1,0 +1,13 @@
+
+name: Deploy to PROD
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - release
+
+jobs:
+  deploy-aws:
+    uses: ./.github/workflows/deploy-aws.yml
+    secrets: inherit

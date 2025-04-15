@@ -3,4 +3,4 @@ node_modules
 eslint.config.js
 pnpm-lock.yaml
 vite.config.ts
-vitest.config.ts
+vitest.config.ts/.github/actions/terraform-apply/
